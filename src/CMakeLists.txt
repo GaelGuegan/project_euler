@@ -1,20 +1,20 @@
 cmake_minimum_required(VERSION 3.2)
 project(project_euler)
 
-
 MACRO(SUBDIRLIST result curdir)
-  FILE(GLOB children RELATIVE ${curdir} ${curdir}/*)
-  SET(dirlist "")
-  FOREACH(child ${children})
-    IF(IS_DIRECTORY ${curdir}/${child})
+  file(GLOB children RELATIVE ${curdir} ${curdir}/*)
+  set(dirlist "")
+  foreach(child ${children})
+    if(IS_DIRECTORY ${curdir}/${child})
       LIST(APPEND dirlist ${child})
-    ENDIF()
-  ENDFOREACH()
-  SET(${result} ${dirlist})
+    endif()
+  endforeach()
+  set(${result} ${dirlist})
 ENDMACRO()
 
-SUBDIRLIST(SUBDIRS ${CMAKE_CURRENT_SOURCE_DIR})
 
-FOREACH(subdir ${SUBDIRS})
-  ADD_SUBDIRECTORY(${subdir})
-ENDFOREACH()
+SUBDIRLIST(subdirs ${CMAKE_CURRENT_SOURCE_DIR})
+foreach(subdir ${subdirs})
+  add_subdirectory(${subdir})
+endforeach()
+

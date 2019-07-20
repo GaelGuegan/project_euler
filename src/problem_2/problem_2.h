@@ -12,38 +12,30 @@ using namespace std;
 const char *help =
     "Usage: [options]\n"
     "Options:\n"
-    "    -l, --limit     limit of computation (default: 1000)\n"
-    "    -1, --div_1     divisor 1            (default: 3)\n"
-    "    -2, --div_2     divisor 2            (default: 5)\n"
+    "    -l, --limit     limit of computation (default: 4000000)\n"
     "    -h, --help      print help\n"
     "\n";
 
 static struct option long_options[] =
 {
     {"limit",  required_argument,  0, 'm'},
-    {"div_1",  required_argument,  0, '1'},
-    {"div_2",  required_argument,  0, '2'},
     {"help",   no_argument,        0, 'h'},
     {0, 0, 0, 0}
 };
 
 static struct opt {
     int limit;
-    int div_1;
-    int div_2;
 } opt;
 
 int parse_opts(int argc, char **argv)
 {
     /* set the default values */
-    opt.limit = 1000;
-    opt.div_1 = 3;
-    opt.div_2 = 5;
+    opt.limit = 4000000;
 
     /* parse the options */
     int c;
     int opt_idx = 0;
-    while (-1 != (c = getopt_long(argc, argv, "l:1:2:h",
+    while (-1 != (c = getopt_long(argc, argv, "l:h",
                                   long_options, &opt_idx))) {
         switch(c) {
         case 'h':
@@ -51,12 +43,6 @@ int parse_opts(int argc, char **argv)
             exit(0);
         case 'l':
             sscanf(optarg, "%i", &opt.limit);
-            break;
-        case 'a':
-            sscanf(optarg, "%i", &opt.div_1);
-            break;
-        case 'b':
-            sscanf(optarg, "%i", &opt.div_2);
             break;
         default:
             cerr << "Unknow option." << endl;
