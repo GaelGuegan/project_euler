@@ -10,39 +10,40 @@
 using namespace std;
 
 const char *help =
+    "Compute smallest positive number that is evenly divisible by all of the numbers from 1 to 20.\n\n"
     "Usage: [options]\n"
     "Options:\n"
-    "    -l, --limit     limit of computation (default: 4000000)\n"
-    "    -h, --help      print help\n"
+    "    -m, --max_divider     limit of computation (default: 20)\n"
+    "    -h, --help            print help\n"
     "\n";
 
 static struct option long_options[] =
 {
-    {"limit",  required_argument,  0, 'm'},
-    {"help",   no_argument,        0, 'h'},
+    {"max_divider",  required_argument,  0, 'm'},
+    {"help",         no_argument,        0, 'h'},
     {0, 0, 0, 0}
 };
 
 static struct opt {
-    int limit;
+    int max_divider;
 } opt;
 
 int parse_opts(int argc, char **argv)
 {
     /* set the default values */
-    opt.limit = 4000000;
+    opt.max_divider = 20;
 
     /* parse the options */
     int c;
     int opt_idx = 0;
-    while (-1 != (c = getopt_long(argc, argv, "l:h",
+    while (-1 != (c = getopt_long(argc, argv, "m:h",
                                   long_options, &opt_idx))) {
         switch(c) {
         case 'h':
             printf("%s", help);
             exit(0);
-        case 'l':
-            sscanf(optarg, "%i", &opt.limit);
+        case 'm':
+            sscanf(optarg, "%i", &opt.max_divider);
             break;
         default:
             cerr << "Unknow option." << endl;
