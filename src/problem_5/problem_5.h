@@ -1,5 +1,5 @@
-#ifndef PROBLEM_2
-#define PROBLEM_2
+#ifndef PROBLEM_5
+#define PROBLEM_5
 
 #include <cstdlib>
 #include <cstdio>
@@ -18,7 +18,7 @@ const char *help =
 
 static struct option long_options[] =
 {
-    {"limit",  required_argument,  0, 'l'},
+    {"limit",  required_argument,  0, 'm'},
     {"help",   no_argument,        0, 'h'},
     {0, 0, 0, 0}
 };

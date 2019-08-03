@@ -1,5 +1,5 @@
-#ifndef PROBLEM_2
-#define PROBLEM_2
+#ifndef PROBLEM_4
+#define PROBLEM_4
 
 #include <cstdlib>
 #include <cstdio>
@@ -12,37 +12,37 @@ using namespace std;
 const char *help =
     "Usage: [options]\n"
     "Options:\n"
-    "    -l, --limit     limit of computation (default: 4000000)\n"
+    "    -d, --digit     digit number of the product of the largest palindrome (default: 3)\n"
     "    -h, --help      print help\n"
     "\n";
 
 static struct option long_options[] =
 {
-    {"limit",  required_argument,  0, 'l'},
+    {"digit",  required_argument,  0, 'd'},
     {"help",   no_argument,        0, 'h'},
     {0, 0, 0, 0}
 };
 
 static struct opt {
-    int limit;
+    int digit;
 } opt;
 
 int parse_opts(int argc, char **argv)
 {
     /* set the default values */
-    opt.limit = 4000000;
+    opt.digit = 3;
 
     /* parse the options */
     int c;
     int opt_idx = 0;
-    while (-1 != (c = getopt_long(argc, argv, "l:h",
+    while (-1 != (c = getopt_long(argc, argv, "d:h",
                                   long_options, &opt_idx))) {
         switch(c) {
         case 'h':
             printf("%s", help);
             exit(0);
-        case 'l':
-            sscanf(optarg, "%i", &opt.limit);
+        case 'd':
+            sscanf(optarg, "%i", &opt.digit);
             break;
         default:
             cerr << "Unknow option." << endl;
