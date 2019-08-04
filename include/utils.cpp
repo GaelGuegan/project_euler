@@ -1,6 +1,6 @@
 #include "utils.h"
 
-uint64_t get_prime_numbers(vector<uint64_t> &v, uint64_t max)
+void get_prime_numbers(vector<uint64_t> &v, uint64_t max)
 {
 	v = {2};
 
@@ -73,3 +73,4 @@ bool is_prime_number(uint64_t n)
 
 	return 1;
 }
+
