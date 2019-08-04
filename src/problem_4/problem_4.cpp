@@ -1,27 +1,5 @@
 #include "problem_4.h"
-#include <vector>
-
-bool is_palindromic_number(int n)
-{
-	int i = 1;
-	vector<int> n_array;
-
-    // Convert Integer to Array
-	 do {
-        i = i * 10;
-        n_array.push_back((n%i)/(i/10));
-    } while ( n / i != 0);
-
-    // Compare each number
-    for (int j = 0; j < n_array.size(); j++) {
-        if ( n_array[j] == n_array[n_array.size()-j-1])
-            continue;
-        else
-            return 0;
-    }
-
-    return 1;
-}
+#include "utils.h"
 
 int main(int argc, char* argv[])
 {
