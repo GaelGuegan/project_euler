@@ -1,4 +1,4 @@
-#include "problem_7.h"
+#include "problem_07.h"
 #include "utils.h"
 
 int main(int argc, char* argv[])
