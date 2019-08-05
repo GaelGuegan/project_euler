@@ -15,7 +15,6 @@ void get_prime_numbers(vector<uint64_t> &v, uint64_t max)
 			}
 		}
 	}
-	return v.size();
 }
 
 uint64_t get_prime_numbers(uint32_t nth)
@@ -74,3 +73,13 @@ bool is_prime_number(uint64_t n)
 	return 1;
 }
 
+void get_pythagorean_triples(vector<array<int, 3>> &v, int max)
+{
+	for (int a = 0; a < max; a++) {
+		for (int b = a + 1; b < max; b++) {
+			double c = sqrt(a * a + b * b);
+			if (c - floor(c) == 0)
+				v.push_back({a, b, (int)c});
+		}
+	}
+}
