@@ -17,7 +17,7 @@ void get_prime_numbers(vector<uint64_t> &v, uint64_t max)
 	}
 }
 
-uint64_t get_prime_numbers(uint32_t nth)
+uint64_t get_prime_number(uint32_t nth)
 {
 	vector<uint64_t> v = {2};
 	int i = 2;
@@ -82,4 +82,31 @@ void get_pythagorean_triples(vector<array<int, 3>> &v, int max)
 				v.push_back({a, b, (int)c});
 		}
 	}
+}
+
+
+void get_triangle_numbers(vector<uint64_t> &v, uint64_t max)
+{
+	v = {1};
+	uint64_t triangle = 0;
+
+	for (uint64_t i = 1; i < max; i++) {
+		triangle = 0;
+		for (int i = 1; i <= i; i++) {
+			triangle += i;
+		}
+		v.push_back(triangle);
+	}
+
+}
+
+uint64_t get_triangle_numbers(uint32_t nth)
+{
+	uint64_t triangle = 0;
+
+	for (int i = 1; i <= nth; i++) {
+		triangle += i;
+	}
+
+	return triangle;
 }

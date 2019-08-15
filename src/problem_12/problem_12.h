@@ -1,5 +1,5 @@
-#ifndef PROBLEM_11
-#define PROBLEM_11
+#ifndef PROBLEM_12
+#define PROBLEM_12
 
 #include <cstdlib>
 #include <cstdio>
@@ -15,44 +15,37 @@ using namespace std;
 const char *help =
     "Usage: [options]\n"
     "Options:\n"
-    "    -f, --file    Input file containing large number (default: input.txt)\n"
-    "    -n, --num     How many numbers to sum            (default: 4)\n"
-    "    -h, --help    print help\n"
+    "    -d, --divisors    Maximum number of divisors (default: 500)\n"
+    "    -h, --help        print help\n"
     "\n";
 
 static struct option long_options[] =
 {
-    {"file",  required_argument,  0, 'f'},
-    {"num",   required_argument,  0, 'n'},
-    {"help",  no_argument,        0, 'h'},
+    {"divisors",  required_argument,  0, 'd'},
+    {"help",      no_argument,        0, 'h'},
     {0, 0, 0, 0}
 };
 
 static struct opt {
-    const char *file;
-    int num;
+    int divisors;
 } opt;
 
 int parse_opts(int argc, char **argv)
 {
     /* set the default values */
-    opt.file = "/home/gaelguegan/Desktop/project_euler/src/problem_11/input.txt";
-    opt.num = 4;
+    opt.divisors = 500;
 
     /* parse the options */
     int c;
     int opt_idx = 0;
-    while (-1 != (c = getopt_long(argc, argv, "f:n:h",
+    while (-1 != (c = getopt_long(argc, argv, "d:h",
                                   long_options, &opt_idx))) {
         switch(c) {
         case 'h':
             printf("%s", help);
             exit(0);
-        case 'f':
-            opt.file = optarg;
-            break;
-        case 'n':
-            sscanf(optarg, "%i", &opt.num);
+        case 'd':
+            sscanf(optarg, "%i", &opt.divisors);
             break;
         default:
             cerr << "Unknow option." << endl;
