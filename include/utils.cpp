@@ -110,3 +110,36 @@ uint64_t get_triangle_numbers(uint32_t nth)
 
 	return triangle;
 }
+
+void get_collatz_sequence(vector<uint64_t> &collatz, uint64_t start)
+{
+	uint64_t num_0 = start;
+	uint64_t num_1 = 0;
+
+	collatz.push_back(num_0);
+
+	while (num_1 != 1) {
+		if (num_0 % 2 == 0)
+			num_1 = num_0 / 2;
+		else
+			num_1 = 3 * num_0 + 1;
+		collatz.push_back(num_1);
+		num_0 = num_1;
+	}
+}
+
+int get_collatz_sequence_size(uint64_t start)
+{
+	uint64_t num = start;
+	int size = 1;
+
+	while (num > 1) {
+		if (num % 2 == 0)
+			num = num / 2;
+		else
+			num = 3 * num + 1;
+		size++;
+	}
+
+	return size;
+}
