@@ -143,3 +143,14 @@ int get_collatz_sequence_size(uint64_t start)
 
 	return size;
 }
+
+uint64_t factorielle(int n)
+{
+	uint64_t f = 1;
+
+	for (int i = 1; i <= n; i++){
+		f *= i;
+	}
+
+	return f;
+}
