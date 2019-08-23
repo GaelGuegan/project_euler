@@ -1,6 +1,3 @@
-cmake_minimum_required(VERSION 3.2)
-project(project_euler)
-
 MACRO(SUBDIRLIST result curdir)
   file(GLOB children RELATIVE ${curdir} ${curdir}/*)
   set(dirlist "")
