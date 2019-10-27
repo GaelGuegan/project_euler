@@ -84,7 +84,6 @@ void get_pythagorean_triples(vector<array<int, 3>> &v, int max)
 	}
 }
 
-
 void get_triangle_numbers(vector<uint64_t> &v, uint64_t max)
 {
 	v = {1};
@@ -97,7 +96,6 @@ void get_triangle_numbers(vector<uint64_t> &v, uint64_t max)
 		}
 		v.push_back(triangle);
 	}
-
 }
 
 uint64_t get_triangle_numbers(uint32_t nth)
@@ -153,4 +151,12 @@ uint64_t factorielle(int n)
 	}
 
 	return f;
+}
+
+int get_digit(int number, int n)
+{
+	string number_string = to_string(number);
+	int size = number_string.size();
+
+	return (int)number_string[size - n] - '0';
 }
