@@ -1,5 +1,5 @@
-#ifndef PROBLEM_13
-#define PROBLEM_13
+#ifndef PROBLEM_18
+#define PROBLEM_18
 
 #include <cstdlib>
 #include <cstdio>
@@ -21,19 +21,19 @@ const char *help =
 
 static struct option long_options[] =
 {
-    {"file",  required_argument,  0, 'f'},
-    {"help",   no_argument,       0, 'h'},
+    {"file",   required_argument,  0, 'f'},
+    {"help",   no_argument,        0, 'h'},
     {0, 0, 0, 0}
 };
 
 static struct opt {
-    const char* file;
+    const char *file;
 } opt;
 
 int parse_opts(int argc, char **argv)
 {
     /* set the default values */
-    opt.file = "../src/problem_13/input.txt";
+    opt.file = "../src/problem_18/input.txt";
 
     /* parse the options */
     int c;

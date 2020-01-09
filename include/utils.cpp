@@ -160,3 +160,21 @@ int get_digit(int number, int n)
 
 	return (int)number_string[size - n] - '0';
 }
+
+void print_1d(vector<int> v)
+{
+	for (int i = 0; i < v.size(); i++) {
+		cout << v[i] << " ";
+	}
+	cout << endl;
+}
+
+void print_2d(vector<vector<int>> v)
+{
+	for (int i = 0; i < v.size(); i++) {
+		for (int j = 0; j < v[i].size(); j++) {
+			cout << v[i][j] << " ";
+		}
+		cout << endl;
+	}
+}

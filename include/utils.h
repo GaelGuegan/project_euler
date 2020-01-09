@@ -22,5 +22,7 @@ void     get_collatz_sequence(vector<uint64_t> &collatz, uint64_t start);
 int      get_collatz_sequence_size(uint64_t start);
 uint64_t factorielle(int i);
 int      get_digit(int number, int n);
+void     print_1d(vector<int> v);
+void     print_2d(vector<vector<int>> v);
 
 #endif
