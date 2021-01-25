@@ -91,8 +91,8 @@ void get_triangle_numbers(vector<uint64_t> &v, uint64_t max)
 
 	for (uint64_t i = 1; i < max; i++) {
 		triangle = 0;
-		for (int i = 1; i <= i; i++) {
-			triangle += i;
+		for (int j = 1; j <= i; j++) {
+			triangle += j;
 		}
 		v.push_back(triangle);
 	}
