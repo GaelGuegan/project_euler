@@ -1,4 +1,4 @@
-# TO DO:
+# TO DO
 
 - parse options : gnu getopt.h vs c++ boost program options
 - download boost

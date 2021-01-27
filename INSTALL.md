@@ -1,10 +1,12 @@
+# INSTALL INSTRUCTIONS
+
 ## DOWNLOAD
 
 ```shell
 git clone https://github.com/GaelGuegan/project_euler.git
 ```
 
-### DEPENDENCIES
+## DEPENDENCIES
 
 ```shell
  sudo apt-get install libgmp3-dev
