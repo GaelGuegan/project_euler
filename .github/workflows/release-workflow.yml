@@ -5,14 +5,14 @@ on:
 
 jobs:
   build:
-    name: Upload Release Asset
+    name: Create Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Build project
-        run: cd build && cmake .. && make && cd .. && \
+        run: cd build && cmake .. && make && cd .. &&
              zip --junk-paths project-euler ./build/src/problem_*/problem_*
 
       - name: Create Release
