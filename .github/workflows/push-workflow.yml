@@ -1,8 +1,8 @@
-name: Super-Linter
+name: Check, Build & Test
 on: push
 jobs:
-  super-lint:
-    name: Lint code base
+  check-build-test:
+    name: Check, Build & Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -13,10 +13,10 @@ jobs:
         env:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_JSCPD: false
 
       - name: Build project
         run: cd build && cmake .. && make && cd ..
 
       - name: Test project
         run: ./test/run.sh
-

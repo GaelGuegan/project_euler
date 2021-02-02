@@ -62,6 +62,11 @@ vector<vector<int>> read_file(const char *filename)
     string line;
     string num;
 
+    if (file.fail()) {
+        cout << "Error: " << filename << " does not exist ! " << endl;
+        exit(-1);
+    }
+
     while(getline(file, line)) {
         vector<int> v;
         stringstream ss;
