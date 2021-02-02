@@ -15,7 +15,7 @@ using namespace std;
 const char *help =
     "Usage: [options]\n"
     "Options:\n"
-    "    -f, --file    input file (default: input.txt)\n"
+    "    -f, --file    input file (default: problem_18.txt)\n"
     "    -h, --help    print help\n"
     "\n";
 
@@ -33,7 +33,7 @@ static struct opt {
 int parse_opts(int argc, char **argv)
 {
     /* set the default values */
-    opt.file = "../src/problem_18/input.txt";
+    opt.file = "problem_18.txt";
 
     /* parse the options */
     int c;

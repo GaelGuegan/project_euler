@@ -1,13 +1,13 @@
-#!/bin/sh
+#!/bin/sh -e
 
-TOP_DIR=$PWD/..
-BIN_DIR=$TOP_DIR/build/src
+BIN_DIR="$PWD"/build/src
 
-for f in $BIN_DIR/problem_*/problem_*
+for f in "$BIN_DIR"/problem_*
 do
+    cd "$f"
     echo "================"
-    echo $(basename $f)
+    basename "$f"
     echo "================"
-    $f
+    "$f"/"$(basename "$f")"
     echo ""
 done

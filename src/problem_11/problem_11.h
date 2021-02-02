@@ -15,7 +15,7 @@ using namespace std;
 const char *help =
     "Usage: [options]\n"
     "Options:\n"
-    "    -f, --file    Input file containing large number (default: input.txt)\n"
+    "    -f, --file    Input file containing large number (default: problem_11.txt)\n"
     "    -n, --num     How many numbers to sum            (default: 4)\n"
     "    -h, --help    print help\n"
     "\n";
@@ -36,7 +36,7 @@ static struct opt {
 int parse_opts(int argc, char **argv)
 {
     /* set the default values */
-    opt.file = "/home/gaelguegan/Desktop/project_euler/src/problem_11/input.txt";
+    opt.file = "problem_11.txt";
     opt.num = 4;
 
     /* parse the options */

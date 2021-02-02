@@ -1,0 +1,22 @@
+name: Check, Build & Test
+on: push
+jobs:
+  check-build-test:
+    name: Check, Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Super-Linter
+        uses: github/super-linter@v3
+        env:
+          DEFAULT_BRANCH: master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_JSCPD: false
+
+      - name: Build project
+        run: cd build && cmake .. && make && cd ..
+
+      - name: Test project
+        run: ./test/run.sh

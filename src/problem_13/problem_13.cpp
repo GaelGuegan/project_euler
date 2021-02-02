@@ -15,6 +15,11 @@ int main(int argc, char* argv[])
     int sum_tmp = 0;
     int val = 0;
 
+    if (file.fail()) {
+        cout << "Error: " << opt.file << " does not exist ! " << endl;
+        exit(-1);
+    }
+
     while(getline(file, line)) {
         v.push_back(line);
     }

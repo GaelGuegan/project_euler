@@ -23,11 +23,11 @@ uint64_t get_prime_number(uint32_t nth)
 	int i = 2;
 
 	do {
-		for (auto it = v.begin() ; it < v.end(); ++it) {
-			if ( i % *it == 0) {
+		for (auto it = v.begin(); it < v.end(); ++it) {
+			if (i % *it == 0) {
 				break;
 			}
-			if ( it == v.end() - 1){
+			if (it == v.end() - 1){
 				v.push_back(i);
 				break;
 			}
@@ -43,21 +43,21 @@ bool is_palindromic_number(int n)
 	int i = 1;
 	vector<int> n_array;
 
-    // Convert Integer to Array
-	 do {
-        i = i * 10;
-        n_array.push_back((n%i)/(i/10));
-    } while ( n / i != 0);
+	// Convert Integer to Array
+	do {
+		i = i * 10;
+		n_array.push_back((n%i)/(i/10));
+	} while ( n / i != 0);
 
-    // Compare each number
-    for (int j = 0; j < n_array.size(); j++) {
-        if ( n_array[j] == n_array[n_array.size()-j-1])
-            continue;
-        else
-            return 0;
-    }
+	// Compare each number
+	for (int j = 0; j < n_array.size(); j++) {
+		if (n_array[j] == n_array[n_array.size()-j-1])
+			continue;
+		else
+		return 0;
+	}
 
-    return 1;
+	return 1;
 }
 
 bool is_prime_number(uint64_t n)
