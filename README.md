@@ -1,3 +1,7 @@
+![](https://github.com/GaelGuegan/project_euler/workflows/Check/badge.svg)
+![](https://github.com/GaelGuegan/project_euler/workflows/Build/badge.svg)
+![](https://github.com/GaelGuegan/project_euler/workflows/Test/badge.svg)
+
 # PROJECT EULER
 
 Official website : <https://projecteuler.net>
