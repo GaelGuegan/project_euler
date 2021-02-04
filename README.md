@@ -1,8 +1,8 @@
-![](https://github.com/GaelGuegan/project_euler/workflows/Check/badge.svg)
-![](https://github.com/GaelGuegan/project_euler/workflows/Build/badge.svg)
-![](https://github.com/GaelGuegan/project_euler/workflows/Test/badge.svg)
-
 # PROJECT EULER
+
+![Check](https://github.com/GaelGuegan/project_euler/workflows/Check/badge.svg)
+![Build](https://github.com/GaelGuegan/project_euler/workflows/Build/badge.svg)
+![Test](https://github.com/GaelGuegan/project_euler/workflows/Test/badge.svg)
 
 Official website : <https://projecteuler.net>
 

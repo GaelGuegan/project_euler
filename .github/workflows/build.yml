@@ -4,10 +4,12 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        compiler: [g++, clang++]
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Build project
-        run: cd build && cmake .. && make && cd ..
-
+        run: cd build && CXX=${{ matrix.compiler }} cmake .. && make && cd ..
