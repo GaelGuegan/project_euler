@@ -1,0 +1,27 @@
+name: Build Emscripten
+on: push
+jobs:
+  build-emscripten:
+    name: Build Emscripten
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Emscripten
+        uses: mymindstorm/setup-emsdk@v7
+
+      - name: Install lzip
+        run: gcc -xc++ -E -v - && sudo apt install lzip
+
+      - name: Download GMP lib
+        run: wget https://gmplib.org/download/gmp/gmp-6.2.1.tar.lz &&
+             tar --lzip -xvf gmp-6.2.1.tar.lz
+
+      - name: Compile & Install GMP lib
+        run: cd gmp-6.2.1 &&
+             emconfigure ./configure --disable-assembly --enable-cxx --host none --prefix=/usr &&
+             make && sudo make install
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build project
+        run: cd build && CXX=em++ cmake .. && make
