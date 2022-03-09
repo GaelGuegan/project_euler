@@ -1,6 +1,6 @@
 get_filename_component(current ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 add_executable(${current} "${current}.cpp")
-target_include_directories("/usr/include")
-target_link_directories("/usr/lib")
+target_include_directories(${current} PUBLIC "/usr/include")
+target_link_directories(${current} PUBLIC "/usr/lib")
 target_link_libraries(${current} utils gmp)
 install(TARGETS ${current} RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/build)
