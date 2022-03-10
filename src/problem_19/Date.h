@@ -10,9 +10,9 @@ class Date {
          int day;
          int month;
          int year;
-         string dayName;
+         string day_name;
 
-         Date(int day, int month, int year, string dayName);
+         Date(int day, int month, int year, string day_name);
 };
 
 #endif

@@ -4,49 +4,80 @@
 #include <string.h>
 #include <list>
 
+int check_month31(Date date)
+{
+    if (date.day == 32 && (date.month == 1 || date.month == 3 || date.month == 5 || date.month == 7 ||
+        date.month == 8 || date.month == 10 || date.month == 12)) {
+        return 1;
+    }
+
+    return 0;
+}
+
+int check_month30(Date date)
+{
+    if (date.day == 31 && (date.month == 4 || date.month == 6 || date.month == 9 ||
+        date.month == 11)) {
+        return 1;
+    }
+
+    return 0;
+}
+
+int check_february(Date date)
+{
+    if (date.month == 2) {
+        if (date.day == 29 && (date.year % 4 != 0 || date.year % 100 == 0)) {
+            if (date.year % 400 == 0) {
+                return 0;
+            }
+            return 1;
+        }
+
+        if (date.day == 30 && date.year % 4 == 0) {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
 int main(int argc, char* argv[])
 {
     list<Date> dates;
-    Date date0 = Date(01, 01, 1900, "Monday");
+    string day_names[7] = {"monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"};
+    int day_num = 0;
+    Date current_date = Date(1, 1, 1900, "monday");
+    int count = 0;
 
     if (parse_opts(argc, argv) != 0)
         exit(1);
 
-    dates.push_back(date0);
-/*
-remplir list :
-struct date {
-	int day, month, year;
-	string dayname;
-}
-list[0] = date = 01 01 1900 monday
+    while (current_date.year < 2001) {
+        dates.push_back(current_date);
+        day_num++;
+        current_date.day_name = day_names[day_num%7];
+        current_date.day++;
+        if (check_month31(current_date) || check_month30(current_date) || check_february(current_date)) {
+            current_date.day = 1;
+            current_date.month++;
+        }
+        if (current_date.month == 13) {
+            current_date.year++;
+            current_date.month=1;
+        }
+    }
 
-while year <= 2000
-push
-d++
-if d == 31 && (m == 01 || m == 03 ...)
- d = 0
- m++
-if m == 13
- m = 1
- y++
+    for (list<Date>::iterator it = dates.begin(); it != dates.end(); ++it) {
+        if (it->year > 1900 && it->day == 1 && it->day_name == "sunday") {
+            cout << "Result: " << it->day << "/" << it->month << "/" << it->year << " : " << it->day_name << endl;
+            count++;
+        }
+      //cout << "Result: " << it->day << "/" << it->month << "/" << it->year << " : " << it->day_name << endl;
+    }
 
-01/01/1900 : M T W T F S S ...
-30/01/1900 :
-28[29]/02
-31/03
-30/04
-31/05
-30/06
-31/07
-31/08
-30/09
-31/10
-30/11
-31/12
-*/
+    cout << "Count: " << count << endl;
 
-    cout << "Result: " << endl;
 
     return 0;
 }
