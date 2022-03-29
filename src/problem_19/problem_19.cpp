@@ -53,6 +53,7 @@ int main(int argc, char* argv[])
     if (parse_opts(argc, argv) != 0)
         exit(1);
 
+    // Create list of all days
     while (current_date.year < 2001) {
         dates.push_back(current_date);
         day_num++;
@@ -68,16 +69,15 @@ int main(int argc, char* argv[])
         }
     }
 
+    // Compute total of days    
     for (list<Date>::iterator it = dates.begin(); it != dates.end(); ++it) {
-        if (it->year > 1900 && it->day == 1 && it->day_name == "sunday") {
-            cout << "Result: " << it->day << "/" << it->month << "/" << it->year << " : " << it->day_name << endl;
+        if (it->year > 1900 && it->day == 1 && it->day_name == opt.day) {
+            //cout << "Result: " << it->day << "/" << it->month << "/" << it->year << " : " << it->day_name << endl;
             count++;
         }
-      //cout << "Result: " << it->day << "/" << it->month << "/" << it->year << " : " << it->day_name << endl;
     }
 
-    cout << "Count: " << count << endl;
-
+    cout << "Total of " << opt.day << " : " << count << endl;
 
     return 0;
 }

@@ -9,36 +9,42 @@
 #include <fstream>
 #include <getopt.h>
 #include <vector>
+#include <string.h>
 
 using namespace std;
 
 const char *help =
     "Usage: [options]\n"
     "Options:\n"
+    "    -d, --day     day to compute total\n"
     "    -h, --help    print help\n"
     "\n";
 
 static struct option long_options[] =
 {
-    {"file",   required_argument,  0, 'f'},
-    {"help",   no_argument,        0, 'h'},
+    {"day",   required_argument,  0, 'd'},
+    {"help",  no_argument,        0, 'h'},
     {0, 0, 0, 0}
 };
 
 static struct opt {
-    const char *file;
+    char day[20];
 } opt;
 
 int parse_opts(int argc, char **argv)
 {
     /* set the default values */
+    strcpy(opt.day, "sunday");    
 
     /* parse the options */
     int c;
     int opt_idx = 0;
-    while (-1 != (c = getopt_long(argc, argv, "h",
+    while (-1 != (c = getopt_long(argc, argv, "d:h",
                                   long_options, &opt_idx))) {
         switch(c) {
+        case 'd':
+            sscanf(optarg, "%s", &opt.day);
+            break;
         case 'h':
             printf("%s", help);
             exit(0);
