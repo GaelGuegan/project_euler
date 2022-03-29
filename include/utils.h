@@ -21,8 +21,10 @@ uint64_t get_triangle_numbers(uint32_t nth);
 void     get_collatz_sequence(vector<uint64_t> &collatz, uint64_t start);
 int      get_collatz_sequence_size(uint64_t start);
 uint64_t factorielle(int i);
-int      get_digit(int number, int n);
+int         get_digit(uint64_t number, int n);
+vector<int> get_digits(uint64_t number);
 void     print_1d(vector<int> v);
 void     print_2d(vector<vector<int>> v);
 
 #endif
+

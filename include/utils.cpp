@@ -44,17 +44,14 @@ bool is_palindromic_number(int n)
 	vector<int> n_array;
 
 	// Convert Integer to Array
-	do {
-		i = i * 10;
-		n_array.push_back((n%i)/(i/10));
-	} while ( n / i != 0);
+    n_array = get_digits(n);
 
-	// Compare each number
+	// Compare each number between start and end
 	for (int j = 0; j < n_array.size(); j++) {
 		if (n_array[j] == n_array[n_array.size()-j-1])
 			continue;
 		else
-		return 0;
+	    	return 0;
 	}
 
 	return 1;
@@ -147,18 +144,55 @@ uint64_t factorielle(int n)
 	uint64_t f = 1;
 
 	for (int i = 1; i <= n; i++){
-		f *= i;
+		cout << f << " " << i << endl;
+        f *= i;
+        if ((i+1)  > ULLONG_MAX / f) {
+            cerr << "======    !!! OVERFLOW !!!   ==========" << endl;
+            cerr << "UINT64_MAX     : " << UINT64_MAX << " " << to_string(UINT64_MAX).size() << endl;
+            cerr << "ULLONG_MAX     : " << ULLONG_MAX << endl;
+            cerr << "i              : " << i << endl;
+            cerr << "ULLONG_MAX / f : " << ULLONG_MAX / f << endl; 
+            cerr << "f              : " << f << " " << to_string(f).size() << endl << endl;
+       }
 	}
 
 	return f;
+    
+    /*
+     if (n == 0)
+         return 1;
+     return (n * factorielle(n - 1);
+     */
+
 }
 
-int get_digit(int number, int n)
+int get_digit(uint64_t number, int n)
 {
 	string number_string = to_string(number);
 	int size = number_string.size();
 
 	return (int)number_string[size - n] - '0';
+}
+
+vector<int> get_digits(uint64_t number)
+{
+    /*vector<int> digits;
+    int size = to_string(number).size();
+    
+    for (int i = 1; i < size+1; i++) {
+        digits.push_back(get_digit(number, i));
+    }*/
+
+  	vector<int> digits;
+    int i = 1;
+
+	do {
+		i = i * 10;
+		digits.push_back((number%i)/(i/10));
+	} while (number / i != 0);
+
+
+    return digits;
 }
 
 void print_1d(vector<int> v)
