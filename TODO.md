@@ -4,3 +4,4 @@
 - download boost
 - automatically download lib with script and gitignore it
 - build.sh script : rm -rf * && cmake .. && make -j7 && make install
+- init project template by DL readme
