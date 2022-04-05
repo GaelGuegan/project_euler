@@ -212,3 +212,16 @@ void print_2d(vector<vector<int>> v)
 		cout << endl;
 	}
 }
+
+void get_binary(int n, int *binary, int size)
+{
+    if (binary == NULL) {
+        cerr << "Binary conversion impossible: array should be allocated." << endl;
+        return;
+    }
+
+    for (int i = 0; i < size; i++) {
+        binary[i] = (n & (1 << i)) >> i ;
+    }
+
+}

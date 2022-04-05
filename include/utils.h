@@ -25,6 +25,7 @@ int         get_digit(uint64_t number, int n);
 vector<int> get_digits(uint64_t number);
 void     print_1d(vector<int> v);
 void     print_2d(vector<vector<int>> v);
+void     get_binary(int n, int *binary, int size);
 
 #endif
 
