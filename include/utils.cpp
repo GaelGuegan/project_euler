@@ -139,8 +139,9 @@ int get_collatz_sequence_size(uint64_t start)
 	return size;
 }
 
-uint64_t factorielle(int n)
+uint64_t factorial(int n)
 {
+    /*
 	uint64_t f = 1;
 
 	for (int i = 1; i <= n; i++){
@@ -157,12 +158,17 @@ uint64_t factorielle(int n)
 	}
 
 	return f;
+    */
     
-    /*
      if (n == 0)
          return 1;
-     return (n * factorielle(n - 1);
-     */
+     if (factorial(n-1) > ULLONG_MAX / n) {
+        cerr << "===== !!! OVERFLOW !!! ====" << endl;
+        cerr << "value n  : " << n << endl;
+        cerr << "value n-1: " << n-1 << endl;
+        return 1;
+     }
+     return (n * factorial(n - 1));
 
 }
 
@@ -223,5 +229,19 @@ void get_binary(int n, int *binary, int size)
     for (int i = 0; i < size; i++) {
         binary[i] = (n & (1 << i)) >> i ;
     }
+
+}
+
+vector<int> get_dividors(uint64_t n)
+{
+    vector<int> dividors;
+    
+    for (int i = 1; i < n; i++) {
+        if (n % i == 0) {
+            dividors.push_back(i);
+        }
+    }
+
+    return dividors;
 
 }

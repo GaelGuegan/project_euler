@@ -20,25 +20,30 @@ const char *help =
 
 static struct option long_options[] =
 {
-    {"file",   required_argument,  0, 'f'},
+    {"max",    required_argument,  0, 'm'},
     {"help",   no_argument,        0, 'h'},
     {0, 0, 0, 0}
 };
 
 static struct opt {
-    const char *file;
+    int max;
 } opt;
 
 int parse_opts(int argc, char **argv)
 {
     /* set the default values */
+    opt.max = 1000;
 
     /* parse the options */
     int c;
     int opt_idx = 0;
-    while (-1 != (c = getopt_long(argc, argv, "h",
+    while (-1 != (c = getopt_long(argc, argv, "hm:",
                                   long_options, &opt_idx))) {
         switch(c) {
+        case 'm':
+            sscanf(optarg, "%i", &opt.max);
+            //opt.max = atoi(optarg);
+            break;
         case 'h':
             printf("%s", help);
             exit(0);
@@ -56,6 +61,7 @@ int parse_opts(int argc, char **argv)
             cout << argv[optind++];
         cout << endl;
     }
+
     return 0;
 }
 

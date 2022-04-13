@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[])
 {
-    uint64_t num = factorielle(10);
+    uint64_t num = factorial(10);
     vector<int> digits;
     int total;
 

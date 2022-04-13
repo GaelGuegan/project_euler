@@ -1,43 +1,38 @@
 #include "problem_21.h"
 #include "utils.h"
-#include <string.h>
+#include <algorithm>
 
 int main(int argc, char* argv[])
 {
-    int binary[32];
-    int n = 1041;
-    int size = sizeof(binary) / sizeof(int);
-    int start = 0, end = 0;
-    int count = 0, max = 0;
+   if (parse_opts(argc, argv) != 0)
+        exit(1);
 
-    memset(binary, -1, size);
-    get_binary(n, binary, size);
+    vector<int> sum;
+    vector<int> amicals;
+    int sum_am = 0;
 
-    cout << n << endl;
-    for (int i = 0; i < size; i++) {
-        cout << binary[i] << " ";
-    }
-    cout << endl;
-    for (int i = 0; i < size; i++) {
-        if (binary[i] == 1) {
-            start = 1;
-        }
-        if (binary[i] == 0 && start == 1) {
-            count++;
-        }
-        if (binary[i] == 1 && start == 1 && count != 0) {
-            end = 1;
-            if (count > max)
-                max = count;
-            count = 0;
+    for (int i = 0; i < opt.max; i++) {
+        vector<int> dividors = get_dividors(i);
+        
+        sum.push_back(0);
+
+        for (int j = 0; j < dividors.size(); j++) {
+            sum[i] += dividors[j];
         }
     }
 
-    cout << "Result: ";
-    if (end)
-        cout << max << endl;
-    else
-        cout << 0 << endl;
+
+    for (int i = 0; i < sum.size(); i++) {
+        if (sum[i] < sum.size()) {
+            if (i == sum[sum[i]] && i != sum[i]) {
+                //amicals.push_back(i);
+                cout << i << ":" << sum[i] << endl;
+                sum_am += sum[i];
+            }
+        }
+    }
+    
+    cout << "Sum amicals: " << sum_am << endl;
 
     return 0;
 }
