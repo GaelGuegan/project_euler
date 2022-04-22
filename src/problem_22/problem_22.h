@@ -32,16 +32,20 @@ static struct opt {
 int parse_opts(int argc, char **argv)
 {
     /* set the default values */
+    opt.file = "names.txt";
 
     /* parse the options */
     int c;
     int opt_idx = 0;
-    while (-1 != (c = getopt_long(argc, argv, "h",
+    while (-1 != (c = getopt_long(argc, argv, "hf:",
                                   long_options, &opt_idx))) {
         switch(c) {
         case 'h':
             printf("%s", help);
             exit(0);
+            break;
+        case 'f':
+            opt.file = optarg;
             break;
         default:
             cerr << "Unknow option." << endl;
