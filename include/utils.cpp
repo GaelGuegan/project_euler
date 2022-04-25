@@ -245,3 +245,33 @@ vector<int> get_dividors(uint64_t n)
     return dividors;
 
 }
+
+void get_perfect_numbers(vector<uint64_t> &perfect_numbers, uint64_t max)
+{
+    for (int i = 0; i < max; i++) {
+        int sum = 0;
+        for (int j = 0; j < i; j++) {
+            if (i % j == 0) {
+                sum += j;
+            }
+        }
+        if (sum == i) {
+            perfect_numbers.push_back(i);
+        }
+    }
+}
+
+void get_abundant_numbers(vector<uint64_t> &abundant_numbers, uint64_t max)
+{
+    for (int i = 1; i < max; i++) {
+        int sum = 0;
+        for (int j = 1; j < i; j++) {
+            if (i % j == 0) {
+                sum += j;
+            }
+        }
+        if (sum > i) {
+            abundant_numbers.push_back(i);
+        }
+    }
+}

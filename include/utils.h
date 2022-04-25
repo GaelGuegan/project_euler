@@ -27,6 +27,8 @@ vector<int> get_dividors(uint64_t n);
 void     print_1d(vector<int> v);
 void     print_2d(vector<vector<int>> v);
 void     get_binary(int n, int *binary, int size);
+void     get_perfect_numbers(vector<uint64_t> &perfect_numbers, uint64_t max);
+void     get_abundant_numbers(vector<uint64_t> &abundant_numbers, uint64_t max);
 
 #endif
 
