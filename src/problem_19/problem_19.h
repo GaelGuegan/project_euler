@@ -28,13 +28,14 @@ static struct option long_options[] =
 };
 
 static struct opt {
-    char day[20];
+    const char *day;
 } opt;
 
 int parse_opts(int argc, char **argv)
 {
     /* set the default values */
-    strcpy(opt.day, "sunday");    
+    opt.day = "sunday";    
+    //strcpy(opt.day, "sunday");    
 
     /* parse the options */
     int c;
@@ -43,7 +44,8 @@ int parse_opts(int argc, char **argv)
                                   long_options, &opt_idx))) {
         switch(c) {
         case 'd':
-            sscanf(optarg, "%s", &opt.day);
+            opt.day = optarg;
+            //sscanf(optarg, "%s", &opt.day);
             break;
         case 'h':
             printf("%s", help);
