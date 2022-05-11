@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Emscripten
-        uses: mymindstorm/setup-emsdk@v7
+        uses: mymindstorm/setup-emsdk@v11
 
       - name: Install lzip
         run: gcc -xc++ -E -v - && sudo apt install lzip
