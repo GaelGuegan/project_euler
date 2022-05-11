@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-cd build
+cd build || exit
 cmake ..
 make -j7
 make install

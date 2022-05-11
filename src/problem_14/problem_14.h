@@ -45,7 +45,7 @@ int parse_opts(int argc, char **argv)
             printf("%s", help);
             exit(0);
         case 'l':
-            sscanf(optarg, "%lu", &opt.limit);
+            sscanf(optarg, "%llu", &opt.limit);
             break;
         default:
             cerr << "Unknow option." << endl;
