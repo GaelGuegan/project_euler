@@ -17,11 +17,11 @@ jobs:
 
       - name: Compile & Install GMP lib
         run: cd gmp-6.2.1 &&
-             emconfigure ./configure --disable-assembly --enable-cxx --host none --prefix=/usr &&
+             emconfigure ./configure --disable-assembly --enable-cxx --host none --prefix=/usr/gmp &&
              make && sudo make install
 
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Build project
-        run: cd build && CXX=em++ cmake .. && make
+        run: cd build && CXX=em++ CMAKE_PREFIX_PATH=/usr/gmp cmake .. && make

@@ -1,8 +1,9 @@
 # PROJECT EULER
 
-![Check](https://github.com/GaelGuegan/project_euler/workflows/Check/badge.svg)
-![Build](https://github.com/GaelGuegan/project_euler/workflows/Build/badge.svg)
-![Test](https://github.com/GaelGuegan/project_euler/workflows/Test/badge.svg)
+[![Check](https://github.com/GaelGuegan/project_euler/workflows/Check/badge.svg)](https://github.com/GaelGuegan/project_euler/actions/workflows/check.yml)
+[![Build](https://github.com/GaelGuegan/project_euler/workflows/Build/badge.svg)](https://github.com/GaelGuegan/project_euler/actions/workflows/build.yml)
+[![Build-Emscripten](https://github.com/GaelGuegan/project_euler/workflows/Build%20Emscripten/badge.svg)](https://github.com/GaelGuegan/project_euler/actions/workflows/build-emscripten.yml)
+[![Test](https://github.com/GaelGuegan/project_euler/workflows/Test/badge.svg)](https://github.com/GaelGuegan/project_euler/actions/workflows/test.yml)
 
 Official website : <https://projecteuler.net>
 
