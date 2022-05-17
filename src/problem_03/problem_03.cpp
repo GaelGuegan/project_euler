@@ -9,11 +9,11 @@ int main(int argc, char* argv[])
     vector<uint64_t> prime_factors;
 
     for (uint64_t i = 2; i < sqrt(opt.number); i++) {
-    	if (opt.number % i == 0) {
-    		if(is_prime_number(i)){
-    			cout << i <<endl;
-    		}
-    	}
+        if (opt.number % i == 0) {
+            if(is_prime_number(i)){
+                cout << i <<endl;
+            }
+        }
     }
 
     return 0;

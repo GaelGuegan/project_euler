@@ -6,16 +6,16 @@ int main(int argc, char* argv[])
     if (parse_opts(argc, argv) != 0)
         exit(1);
 
-	vector<uint64_t> prime;
-	uint64_t sum = 0;
+    vector<uint64_t> prime;
+    uint64_t sum = 0;
 
-	get_prime_numbers(prime, opt.limit);
+    get_prime_numbers(prime, opt.limit);
 
-	for (auto i : prime) {
-		sum += i;
-	}
+    for (auto i : prime) {
+        sum += i;
+    }
 
-	cout << "Result: " << sum << endl;
+    cout << "Result: " << sum << endl;
 
     return 0;
 }

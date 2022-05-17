@@ -5,7 +5,7 @@ int main(int argc, char* argv[])
 {
     uint64_t num = factorial(10);
     vector<int> digits;
-    int total;
+    int total = 0;
 
     cout << "num: " << num << endl;
  

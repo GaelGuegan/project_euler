@@ -62,10 +62,9 @@ int parse_opts(int argc, char **argv)
             cerr << "Unknow option." << endl;
             exit(1);
         }
-     }
+    }
      
-    if (optind < argc)
-    {
+    if (optind < argc) {
         cout << "non-option ARGV-elements: ";
         while (optind < argc)
             cout << argv[optind++];

@@ -96,16 +96,13 @@ struct Node *vector_to_tree(vector<vector<int>> v)
     for (int i = 1; i < v.size()-1; i++) {
         for (int j = 0; j < v[i].size(); j++) {
             current->node = new_node(v[i][j]);
-           // cout << v[i+1][j] << endl;
+            // cout << v[i+1][j] << endl;
             current->node->left = new_node(v[i+1][j]);
             current->node->right = new_node(v[i+1][j+1]);
 
             tree->next = current;
             current->next = current;
             //tree->next = tree;
-
-            //if (j < )
-            //current = current->left;
         }
     }
 
@@ -153,9 +150,11 @@ int main(int argc, char* argv[])
     numbers = read_file(opt.file);
     size = numbers.size() * (numbers.size() + 1) / 2;
 
-    /*tree = vector_to_tree(numbers);
+    /*
+    tree = vector_to_tree(numbers);
     cout << "===========" << endl;
-    display_tree(tree);*/
+    display_tree(tree);
+    */
     total = print_tree(numbers, 0, 0, 0);
 
     cout << "Result: " << total << endl;

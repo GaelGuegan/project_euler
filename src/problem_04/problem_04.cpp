@@ -9,10 +9,10 @@ int main(int argc, char* argv[])
     int i = 1, j = 1, mult = 0;
 
     for (; i < pow(10, opt.digit); i++) {
-    	for (j = 1; j < pow(10, opt.digit); j++) {
+        for (j = 1; j < pow(10, opt.digit); j++) {
             if (is_palindromic_number(i * j) && i * j > mult)
                 mult = i * j;
-    	}
+        }
     }
 
     cout <<  mult << endl;
