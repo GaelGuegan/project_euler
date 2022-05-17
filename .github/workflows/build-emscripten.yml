@@ -24,4 +24,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build project
-        run: cd build && CXX=em++ CMAKE_PREFIX_PATH=/usr/gmp cmake .. && make
+        run: cd build && CXX=em++ cmake .. && make

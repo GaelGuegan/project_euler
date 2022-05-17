@@ -1,6 +1,6 @@
 #include "problem_16.h"
 #include "utils.h"
-#include <gmp.h>
+#include "gmp.h"
 #include <string.h>
 
 int main(int argc, char* argv[])
