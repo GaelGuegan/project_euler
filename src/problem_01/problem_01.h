@@ -7,14 +7,14 @@
  * of Me or in accordance with the terms and conditions stipulated
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
-#ifndef PROBLEM_1
-#define PROBLEM_1
+#ifndef PROBLEM_1_H_
+#define PROBLEM_1_H_
 
+#include <getopt.h>
 #include <cstdlib>
 #include <cstdio>
 #include <cmath>
 #include <iostream>
-#include <getopt.h>
 
 using namespace std;
 
@@ -54,7 +54,7 @@ int parse_opts(int argc, char **argv)
     int opt_idx = 0;
     while (-1 != (c = getopt_long(argc, argv, "l:1:2:h",
                                   long_options, &opt_idx))) {
-        switch(c) {
+        switch (c) {
         case 'h':
             printf("%s", help);
             exit(0);
@@ -72,7 +72,7 @@ int parse_opts(int argc, char **argv)
             exit(1);
         }
     }
-     
+
     if (optind < argc) {
         cout << "non-option ARGV-elements: ";
         while (optind < argc)
@@ -82,4 +82,4 @@ int parse_opts(int argc, char **argv)
     return 0;
 }
 
-#endif
+#endif  // PROBLEM_01_H_

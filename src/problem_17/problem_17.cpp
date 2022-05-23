@@ -8,9 +8,9 @@
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
 #include "problem_17.h"
-#include "utils.h"
 #include <string>
 #include <map>
+#include "utils.h"
 
 int main(int argc, char* argv[])
 {
@@ -52,26 +52,25 @@ int main(int argc, char* argv[])
     vector<string> total_array(1001);
 
     for (int i = 1; i <= opt.number; i++) {
-        if (i <= 20)
+        if (i <= 20) {
             total_array[i] = numbers[i];
-        else if (i > 20 && i < 100)
-            total_array[i] = numbers[get_digit(i,2)*10] + numbers[get_digit(i, 1)];
-        else if (i >= 100 && i < 1000) {
+        } else if (i > 20 && i < 100) {
+            total_array[i] = numbers[get_digit(i, 2)*10] + numbers[get_digit(i, 1)];
+        } else if (i >= 100 && i < 1000) {
             if (i % 100 == 0) {
-                total_array[i] = numbers[get_digit(i,3)] + numbers[100];
+                total_array[i] = numbers[get_digit(i, 3)] + numbers[100];
             } else if (i%100 <= 20){
-                total_array[i] = numbers[get_digit(i,3)] + numbers[100] + "and" + numbers[i%100];
+                total_array[i] = numbers[get_digit(i, 3)] + numbers[100] + "and" + numbers[i%100];
             } else if (i%100 > 20) {
                 if (i % 100 != 0) {
-                    total_array[i] = numbers[get_digit(i,3)] + numbers[100] + "and";
-                    total_array[i] += numbers[get_digit(i,2)*10] + numbers[get_digit(i,1)];
+                    total_array[i] = numbers[get_digit(i, 3)] + numbers[100] + "and";
+                    total_array[i] += numbers[get_digit(i, 2)*10] + numbers[get_digit(i, 1)];
                 }
             }
         } else if (i == 1000) {
-            total_array[i] = numbers[get_digit(i,4)] + numbers[1000];
+            total_array[i] = numbers[get_digit(i, 4)] + numbers[1000];
         }
         total += total_array[i].size();
-
     }
     cout << "Result: " << total << endl;
 

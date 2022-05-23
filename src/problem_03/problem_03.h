@@ -7,14 +7,14 @@
  * of Me or in accordance with the terms and conditions stipulated
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
-#ifndef PROBLEM_3
-#define PROBLEM_3
+#ifndef PROBLEM_03_H_
+#define PROBLEM_03_H_
 
+#include <getopt.h>
+#include <iostream>
 #include <cstdlib>
 #include <cstdio>
 #include <cmath>
-#include <iostream>
-#include <getopt.h>
 
 using namespace std;
 
@@ -33,7 +33,7 @@ static struct option long_options[] =
 };
 
 static struct opt {
-    unsigned long long int number;
+    uint64_t number;
 } opt;
 
 int parse_opts(int argc, char **argv)
@@ -46,19 +46,19 @@ int parse_opts(int argc, char **argv)
     int opt_idx = 0;
     while (-1 != (c = getopt_long(argc, argv, "n:h",
                                   long_options, &opt_idx))) {
-        switch(c) {
+        switch (c) {
         case 'h':
             printf("%s", help);
             exit(0);
         case 'n':
-            sscanf(optarg, "%llu", &opt.number);
+            sscanf(optarg, "%lu", &opt.number);
             break;
         default:
             cerr << "Unknow option." << endl;
             exit(1);
         }
      }
-     
+
     if (optind < argc)
     {
         cout << "non-option ARGV-elements: ";
@@ -69,4 +69,4 @@ int parse_opts(int argc, char **argv)
     return 0;
 }
 
-#endif
+#endif  // PROBLEM_03_H_

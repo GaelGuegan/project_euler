@@ -7,24 +7,24 @@
  * of Me or in accordance with the terms and conditions stipulated
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
-#ifndef PROBLEM_11
-#define PROBLEM_11
+#ifndef PROBLEM_11_H
+#define PROBLEM_11_H
 
-#include <cstdlib>
-#include <cstdio>
-#include <string>
-#include <cmath>
+#include <getopt.h>
 #include <iostream>
 #include <fstream>
-#include <getopt.h>
 #include <vector>
+#include <cstdlib>
+#include <cstdio>
+#include <cmath>
 
 using namespace std;
 
 const char *help =
     "Usage: [options]\n"
     "Options:\n"
-    "    -f, --file    Input file containing large number (default: problem_11.txt)\n"
+    "    -f, --file    Input file containing large number "
+    "(default: problem_11.txt)\n"
     "    -n, --num     How many numbers to sum            (default: 4)\n"
     "    -h, --help    print help\n"
     "\n";
@@ -53,7 +53,7 @@ int parse_opts(int argc, char **argv)
     int opt_idx = 0;
     while (-1 != (c = getopt_long(argc, argv, "f:n:h",
                                   long_options, &opt_idx))) {
-        switch(c) {
+        switch (c) {
         case 'h':
             printf("%s", help);
             exit(0);
@@ -68,7 +68,7 @@ int parse_opts(int argc, char **argv)
             exit(1);
         }
      }
-     
+
     if (optind < argc)
     {
         cout << "non-option ARGV-elements: ";

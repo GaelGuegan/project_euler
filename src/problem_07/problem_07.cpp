@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
         exit(1);
 
     cout << opt.prime << "-th prime number: ";
-    cout << get_prime_number(opt.prime) << endl; 
+    cout << get_prime_number(opt.prime) << endl;
 
     return 0;
 }

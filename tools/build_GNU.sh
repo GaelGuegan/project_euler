@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
 cd build || exit
-cmake ..
+CXX=g++ cmake ..
 make -j7
 make install

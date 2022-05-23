@@ -1,3 +1,4 @@
+#include <string>
 #include "utils.h"
 
 void get_prime_numbers(vector<uint64_t> &v, uint64_t max)
@@ -159,7 +160,7 @@ uint64_t factorial(int n)
 
     return f;
     */
-    
+
      if (n == 0)
          return 1;
      if (factorial(n-1) > ULLONG_MAX / n) {
@@ -169,7 +170,6 @@ uint64_t factorial(int n)
         return 1;
      }
      return (n * factorial(n - 1));
-
 }
 
 int get_digit(uint64_t number, int n)
@@ -227,15 +227,14 @@ void get_binary(int n, int *binary, int size)
     }
 
     for (int i = 0; i < size; i++) {
-        binary[i] = (n & (1 << i)) >> i ;
+        binary[i] = (n & (1 << i)) >> i;
     }
-
 }
 
 vector<int> get_dividors(uint64_t n)
 {
     vector<int> dividors;
-    
+
     for (int i = 1; i < n; i++) {
         if (n % i == 0) {
             dividors.push_back(i);
@@ -243,7 +242,6 @@ vector<int> get_dividors(uint64_t n)
     }
 
     return dividors;
-
 }
 
 void get_perfect_numbers(vector<uint64_t> &perfect_numbers, uint64_t max)

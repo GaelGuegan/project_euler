@@ -8,6 +8,7 @@
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
 #include "problem_13.h"
+#include <string>
 #include "utils.h"
 
 int main(int argc, char* argv[])
@@ -29,7 +30,7 @@ int main(int argc, char* argv[])
         exit(-1);
     }
 
-    while(getline(file, line)) {
+    while (getline(file, line)) {
         v.push_back(line);
     }
 

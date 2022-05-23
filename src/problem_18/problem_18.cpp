@@ -8,9 +8,9 @@
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
 #include "problem_18.h"
-#include "utils.h"
 #include <string.h>
 #include <sstream>
+#include "utils.h"
 
 struct Node {
     int data;
@@ -54,7 +54,7 @@ int file_get_number_of_lines(const char *file)
     char c = '0';
     int n = 0;
 
-    while(c != EOF) {
+    while (c != EOF) {
         c = getc(f);
         if (c == '\n' || c == EOF)
             n++;
@@ -76,7 +76,7 @@ vector<vector<int>> read_file(const char *filename)
         exit(-1);
     }
 
-    while(getline(file, line)) {
+    while (getline(file, line)) {
         vector<int> v;
         stringstream ss;
         ss << line;
@@ -111,7 +111,7 @@ struct Node *vector_to_tree(vector<vector<int>> v)
 
             tree->next = current;
             current->next = current;
-            //tree->next = tree;
+            // tree->next = tree;
         }
     }
 

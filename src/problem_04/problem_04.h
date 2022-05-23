@@ -7,21 +7,22 @@
  * of Me or in accordance with the terms and conditions stipulated
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
-#ifndef PROBLEM_4
-#define PROBLEM_4
+#ifndef PROBLEM_4_H_
+#define PROBLEM_4_H_
 
+#include <getopt.h>
+#include <iostream>
 #include <cstdlib>
 #include <cstdio>
 #include <cmath>
-#include <iostream>
-#include <getopt.h>
 
 using namespace std;
 
 const char *help =
     "Usage: [options]\n"
     "Options:\n"
-    "    -d, --digit     digit number of the product of the largest palindrome (default: 3)\n"
+    "    -d, --digit     digit number of the product"
+    " of the largest palindrome (default: 3)\n"
     "    -h, --help      print help\n"
     "\n";
 
@@ -46,7 +47,7 @@ int parse_opts(int argc, char **argv)
     int opt_idx = 0;
     while (-1 != (c = getopt_long(argc, argv, "d:h",
                                   long_options, &opt_idx))) {
-        switch(c) {
+        switch (c) {
         case 'h':
             printf("%s", help);
             exit(0);
@@ -58,7 +59,7 @@ int parse_opts(int argc, char **argv)
             exit(1);
         }
      }
-     
+
     if (optind < argc)
     {
         cout << "non-option ARGV-elements: ";

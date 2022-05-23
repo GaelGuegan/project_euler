@@ -8,6 +8,7 @@
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
 #include "problem_10.h"
+#include <vector>
 #include "utils.h"
 
 int main(int argc, char* argv[])

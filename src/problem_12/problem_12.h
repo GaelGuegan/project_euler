@@ -10,14 +10,13 @@
 #ifndef PROBLEM_12
 #define PROBLEM_12
 
+#include <getopt.h>
+#include <string.h>
+#include <iostream>
+#include <vector>
 #include <cstdlib>
 #include <cstdio>
-#include <string>
 #include <cmath>
-#include <iostream>
-#include <fstream>
-#include <getopt.h>
-#include <vector>
 
 using namespace std;
 
@@ -49,7 +48,7 @@ int parse_opts(int argc, char **argv)
     int opt_idx = 0;
     while (-1 != (c = getopt_long(argc, argv, "d:h",
                                   long_options, &opt_idx))) {
-        switch(c) {
+        switch (c) {
         case 'h':
             printf("%s", help);
             exit(0);
@@ -61,7 +60,7 @@ int parse_opts(int argc, char **argv)
             exit(1);
         }
      }
-     
+
     if (optind < argc)
     {
         cout << "non-option ARGV-elements: ";

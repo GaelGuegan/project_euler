@@ -8,9 +8,9 @@
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
 #include "problem_16.h"
+#include <string.h>
 #include "utils.h"
 #include "gmp.h"
-#include <string.h>
 
 int main(int argc, char* argv[])
 {
@@ -26,11 +26,11 @@ int main(int argc, char* argv[])
 
     mpz_set_ui(base, opt.num);
 
-    mpz_pow_ui (res, base, opt.power);
+    mpz_pow_ui(res, base, opt.power);
 
-    tmp = mpz_get_str (NULL, 10, res);
+    tmp = mpz_get_str(NULL, 10, res);
 
-    for(int i = 0; i < strlen(tmp); i++)
+    for (int i = 0; i < strlen(tmp); i++)
         n += tmp[i] - '0';
 
 

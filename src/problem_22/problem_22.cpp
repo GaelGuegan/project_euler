@@ -8,9 +8,10 @@
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
 #include "problem_22.h"
-#include "utils.h"
 #include <string.h>
+#include <string>
 #include <algorithm>
+#include "utils.h"
 
 #define BEGIN_ALPH_ASCII 64
 
@@ -41,11 +42,11 @@ int main(int argc, char* argv[])
         int alph_score = 0;
         for (int j = 0; j < names[i].size(); j++) {
             alph_score += names[i][j] - BEGIN_ALPH_ASCII;
-            //cout << j << " | " << alph_score << " | " << (int)names[i][j]  << " | " << names[i][j] << endl;
+            // cout << j << " | " << alph_score << " | " << (int)names[i][j]  << " | " << names[i][j] << endl;
         }
-        alph_score *= i+1; 
+        alph_score *= i + 1; 
         score.push_back(alph_score);
-        //cout << i << " | " << names[i] << " | " << score[i] << endl;
+        // cout << i << " | " << names[i] << " | " << score[i] << endl;
         sum += alph_score;
     }
 

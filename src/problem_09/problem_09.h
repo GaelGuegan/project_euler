@@ -7,23 +7,24 @@
  * of Me or in accordance with the terms and conditions stipulated
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
-#ifndef PROBLEM_9
-#define PROBLEM_9
+#ifndef PROBLEM_9_H_
+#define PROBLEM_9_H_
 
+#include <getopt.h>
+#include <string.h>
+#include <iostream>
+#include <vector>
 #include <cstdlib>
 #include <cstdio>
 #include <cmath>
-#include <iostream>
-#include <getopt.h>
-#include <vector>
-#include <string.h>
 
 using namespace std;
 
 const char *help =
     "Usage: [options]\n"
     "Options:\n"
-    "    -p, --pythagorean_sum   Sum of the pythagorean triplet (default: 1000)\n"
+    "    -p, --pythagorean_sum   Sum of the pythagorean triplet"
+    " (default: 1000)\n"
     "    -h, --help              print help\n"
     "\n";
 
@@ -48,7 +49,7 @@ int parse_opts(int argc, char **argv)
     int opt_idx = 0;
     while (-1 != (c = getopt_long(argc, argv, "p:h",
                                   long_options, &opt_idx))) {
-        switch(c) {
+        switch (c) {
         case 'h':
             printf("%s", help);
             exit(0);
@@ -60,7 +61,6 @@ int parse_opts(int argc, char **argv)
             exit(1);
         }
      }
-     
     if (optind < argc)
     {
         cout << "non-option ARGV-elements: ";

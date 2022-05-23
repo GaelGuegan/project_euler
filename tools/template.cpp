@@ -7,13 +7,12 @@
  * of Me or in accordance with the terms and conditions stipulated
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
-
 #include "problem_NUM.h"
 #include "utils.h"
 
 int main(int argc, char* argv[])
 {
-   if (parse_opts(argc, argv) != 0)
+    if (parse_opts(argc, argv) != 0)
         exit(1);
 
     return 0;

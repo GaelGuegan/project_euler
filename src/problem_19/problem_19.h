@@ -10,15 +10,14 @@
 #ifndef PROBLEM_19
 #define PROBLEM_19
 
-#include <cstdlib>
-#include <cstdio>
-#include <string>
-#include <cmath>
+#include <getopt.h>
+#include <string.h>
 #include <iostream>
 #include <fstream>
-#include <getopt.h>
 #include <vector>
-#include <string.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cmath>
 
 using namespace std;
 
@@ -43,18 +42,16 @@ static struct opt {
 int parse_opts(int argc, char **argv)
 {
     /* set the default values */
-    opt.day = "sunday";    
-    //strcpy(opt.day, "sunday");    
+    opt.day = "sunday";
 
     /* parse the options */
     int c;
     int opt_idx = 0;
     while (-1 != (c = getopt_long(argc, argv, "d:h",
                                   long_options, &opt_idx))) {
-        switch(c) {
+        switch (c) {
         case 'd':
             opt.day = optarg;
-            //sscanf(optarg, "%s", &opt.day);
             break;
         case 'h':
             printf("%s", help);
@@ -65,7 +62,7 @@ int parse_opts(int argc, char **argv)
             exit(1);
         }
      }
-     
+
     if (optind < argc)
     {
         cout << "non-option ARGV-elements: ";

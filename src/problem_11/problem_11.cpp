@@ -8,16 +8,16 @@
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
 #include "problem_11.h"
-#include "utils.h"
 #include <sstream>
+#include <string>
+#include "utils.h"
 
 void get_2d_vector_from_file(const char* filename, vector<vector<int>> &input)
 {
     ifstream file(filename);
     string line;
 
-    while(getline(file, line, '\n')) {
-
+    while (getline(file, line, '\n')) {
         vector<int> v;
         stringstream line_stream;
         line_stream.str(line);

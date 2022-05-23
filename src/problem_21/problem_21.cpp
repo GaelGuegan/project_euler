@@ -8,12 +8,12 @@
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
 #include "problem_21.h"
-#include "utils.h"
 #include <algorithm>
+#include "utils.h"
 
 int main(int argc, char* argv[])
 {
-   if (parse_opts(argc, argv) != 0)
+    if (parse_opts(argc, argv) != 0)
         exit(1);
 
     vector<int> sum;
@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
 
     for (int i = 0; i < opt.max; i++) {
         vector<int> dividors = get_dividors(i);
-        
+
         sum.push_back(0);
 
         for (int j = 0; j < dividors.size(); j++) {
@@ -30,17 +30,16 @@ int main(int argc, char* argv[])
         }
     }
 
-
     for (int i = 0; i < sum.size(); i++) {
         if (sum[i] < sum.size()) {
             if (i == sum[sum[i]] && i != sum[i]) {
-                //amicals.push_back(i);
+                // amicals.push_back(i);
                 cout << i << ":" << sum[i] << endl;
                 sum_am += sum[i];
             }
         }
     }
-    
+
     cout << "Sum amicals: " << sum_am << endl;
 
     return 0;

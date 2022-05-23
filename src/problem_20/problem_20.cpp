@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
     int total = 0;
 
     cout << "num: " << num << endl;
- 
+
     digits = get_digits(num);
     print_1d(digits);
 

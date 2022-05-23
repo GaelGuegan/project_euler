@@ -10,14 +10,13 @@
 #ifndef PROBLEM_21
 #define PROBLEM_21
 
+#include <getopt.h>
+#include <string.h>
+#include <iostream>
+#include <vector>
 #include <cstdlib>
 #include <cstdio>
-#include <string>
 #include <cmath>
-#include <iostream>
-#include <fstream>
-#include <getopt.h>
-#include <vector>
 
 using namespace std;
 
@@ -48,10 +47,10 @@ int parse_opts(int argc, char **argv)
     int opt_idx = 0;
     while (-1 != (c = getopt_long(argc, argv, "hm:",
                                   long_options, &opt_idx))) {
-        switch(c) {
+        switch (c) {
         case 'm':
             sscanf(optarg, "%i", &opt.max);
-            //opt.max = atoi(optarg);
+            // opt.max = atoi(optarg);
             break;
         case 'h':
             printf("%s", help);
@@ -62,7 +61,7 @@ int parse_opts(int argc, char **argv)
             exit(1);
         }
      }
-     
+
     if (optind < argc)
     {
         cout << "non-option ARGV-elements: ";

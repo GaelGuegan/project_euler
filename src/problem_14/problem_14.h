@@ -10,21 +10,22 @@
 #ifndef PROBLEM_14
 #define PROBLEM_14
 
-#include <cstdlib>
-#include <cstdio>
-#include <string>
-#include <cmath>
+#include <getopt.h>
 #include <iostream>
 #include <fstream>
-#include <getopt.h>
 #include <vector>
+#include <string>
+#include <cstdlib>
+#include <cstdio>
+#include <cmath>
 
 using namespace std;
 
 const char *help =
     "Usage: [options]\n"
     "Options:\n"
-    "    -l, --limit   max number for computing the collatz sequence (default: 1000000)\n"
+    "    -l, --limit   max number for computing the collatz "
+    "sequence (default: 1000000)\n"
     "    -h, --help    print help\n"
     "\n";
 
@@ -49,19 +50,18 @@ int parse_opts(int argc, char **argv)
     int opt_idx = 0;
     while (-1 != (c = getopt_long(argc, argv, "l:h",
                                   long_options, &opt_idx))) {
-        switch(c) {
+        switch (c) {
         case 'h':
             printf("%s", help);
             exit(0);
         case 'l':
-            sscanf(optarg, "%llu", &opt.limit);
+            sscanf(optarg, "%lu", &opt.limit);
             break;
         default:
             cerr << "Unknow option." << endl;
             exit(1);
         }
      }
-     
     if (optind < argc)
     {
         cout << "non-option ARGV-elements: ";

@@ -1,5 +1,5 @@
 name: Build Emscripten
-on: push
+on: push  # yamllint disable-line rule:truthy
 jobs:
   build-emscripten:
     name: Build Emscripten
@@ -17,7 +17,10 @@ jobs:
 
       - name: Compile & Install GMP lib
         run: cd gmp-6.2.1 &&
-             emconfigure ./configure --disable-assembly --enable-cxx --host none --prefix=/usr/gmp &&
+             emconfigure ./configure --disable-assembly
+                                     --enable-cxx
+                                     --host none
+                                     --prefix=/usr/gmp &&
              make && sudo make install
 
       - name: Checkout code

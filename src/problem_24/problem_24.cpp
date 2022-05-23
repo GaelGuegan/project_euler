@@ -8,8 +8,8 @@
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
 #include "problem_24.h"
-#include "utils.h"
 #include <algorithm>
+#include "utils.h"
 /*
 static int N = 3;
 static int MAX = 3;
@@ -52,7 +52,7 @@ void printArr(int a[], int n)
         cout << a[i] << " ";
     printf("\n");
 }
- 
+
 // Generating permutation using Heap Algorithm
 void heapPermutation(int a[], int size, int n)
 {
@@ -62,22 +62,22 @@ void heapPermutation(int a[], int size, int n)
         printArr(a, n);
         return;
     }
- 
+
     for (int i = 0; i < size; i++) {
         heapPermutation(a, size - 1, n);
- 
+
         // if size is odd, swap 0th i.e (first) and
         // (size-1)th i.e (last) element
         if (size % 2 == 1)
             swap(a[0], a[size - 1]);
- 
+
         // If size is even, swap ith and
         // (size-1)th i.e (last) element
         else
             swap(a[i], a[size - 1]);
     }
 }
- 
+
 // Driver code
 int main()
 {

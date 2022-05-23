@@ -1,5 +1,6 @@
 name: Test
-on: push
+on: push  # yamllint disable-line rule:truthy
+
 jobs:
   test:
     name: Test

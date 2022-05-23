@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
         exit(1);
 
     int sum = 0;
-    for(int i = 0; i < opt.limit; i++) {
+    for (int i = 0; i < opt.limit; i++) {
         if ( (i % opt.div_1 == 0) || (i % opt.div_2 ==0))
             sum += i;
     }

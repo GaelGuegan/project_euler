@@ -1,5 +1,6 @@
 name: Check
-on: push
+on: push  # yamllint disable-line rule:truthy
+
 jobs:
   check-build-test:
     name: Check

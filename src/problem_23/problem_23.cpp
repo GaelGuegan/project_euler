@@ -20,12 +20,12 @@ int main(int argc, char* argv[])
 
     if (parse_opts(argc, argv) != 0)
         exit(1);
-    
+
     get_abundant_numbers(abundants, max);
 
     while (i < max) {
         ko = 0;
-        for(int j = 0; j < abundants.size(); j++) {
+        for (int j = 0; j < abundants.size(); j++) {
             if (abundants[j] > i) {
                 break;
             }
@@ -47,8 +47,8 @@ int main(int argc, char* argv[])
             sum += i;
         }
         i++;
-    };
-    
+    }
+
     cout << "Total: " << sum << endl;
 
     return 0;

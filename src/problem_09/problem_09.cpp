@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
             double c = sqrt(a * a + b * b);
             if (c - floor(c) == 0 && a + b + c == opt.pythagorean_sum) {
                 cout << "a: " << a << " b: " << b << " c: " << c <<endl;
-                cout << "a * b * c = " << (int)a*b*c << endl;
+                cout << "a * b * c = " << static_cast<int>(a*b*c) << endl;
                 return 0;
             }
         }

@@ -1,8 +1,8 @@
 name: Create Release
-on:
+on:  # yamllint disable-line rule:truthy
   push:
     tags:
-    - 'v*'
+      - 'v*'
 
 jobs:
   build:
@@ -28,7 +28,7 @@ jobs:
           prerelease: false
 
       - name: Upload Release Asset
-        id: upload-release-asset 
+        id: upload-release-asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

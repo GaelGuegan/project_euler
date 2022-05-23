@@ -24,14 +24,9 @@ int main(int argc, char* argv[])
 
         if (n % 2 == 0)
             sum += n;
-
     } while (n < opt.limit);
 
     cout << "Result: " << sum << endl;
 
     return 0;
 }
-
-
-
-

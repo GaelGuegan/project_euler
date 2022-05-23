@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
     int max = 0;
     uint64_t num = 0;
 
-    for(int i = 1; i < opt.limit ; i++) {
+    for (int i = 1; i < opt.limit ; i++) {
         size = get_collatz_sequence_size(i);
         if (size > max) {
             num = i;

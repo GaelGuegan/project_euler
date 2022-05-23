@@ -8,10 +8,11 @@
  * in the agreement/contract under which the programs have been supplied.
  *************************************************************************/
 #include "problem_19.h"
+#include <string.h>
+#include <string>
+#include <list>
 #include "Date.h"
 #include "utils.h"
-#include <string.h>
-#include <list>
 
 int check_month31(Date date)
 {
@@ -74,14 +75,14 @@ int main(int argc, char* argv[])
         }
         if (current_date.month == 13) {
             current_date.year++;
-            current_date.month=1;
+            current_date.month = 1;
         }
     }
 
-    // Compute total of days    
+    // Compute total of days
     for (list<Date>::iterator it = dates.begin(); it != dates.end(); ++it) {
         if (it->year > 1900 && it->day == 1 && it->day_name == opt.day) {
-            //cout << "Result: " << it->day << "/" << it->month << "/" << it->year << " : " << it->day_name << endl;
+            // cout << "Result: " << it->day << "/" << it->month << "/" << it->year << " : " << it->day_name << endl;
             count++;
         }
     }
